@@ -6,6 +6,8 @@ import { LoginComponent } from "./components/login/login.component"
 import { HomePageComponent } from "./components/homepage/homepage.component"
 import { PageNotFoundComponent } from "./components/pagenotfound/pagenotfound.component"
 import { RegistrationComponent } from "./components/registration/registration.component"
+import { PostComponent } from "./components/post/post.component"
+import { PostListComponent } from "./components/postlist/postlist.component"
 
 
 const appRoutes = [
@@ -13,7 +15,15 @@ const appRoutes = [
     { path: 'home', component: HomePageComponent },
     { path: 'login', component: LoginComponent, canActivate: [AlreadyAuthGuard] },
     { path: 'register', component: RegistrationComponent, canActivate: [AlreadyAuthGuard] },
-    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+    {
+        path: 'dashboard',
+        component: DashboardComponent,
+        canActivate: [AuthGuard],
+        children: [
+            { path: '',  component: PostListComponent },
+            { path: ':id', component: PostComponent },
+        ]
+    },
     { path: '**', component: PageNotFoundComponent }
 
 ];

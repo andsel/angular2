@@ -14,6 +14,9 @@ import { PageNotFoundComponent } from './components/pagenotfound/pagenotfound.co
 import { LoginComponent } from './components/login/login.component'
 import { TruncatePipe } from './pipes/truncate.pipe'
 import { RegistrationComponent } from './components/registration/registration.component'
+import { PostComponent } from "./components/post/post.component"
+import { PostListComponent } from "./components/postlist/postlist.component"
+import { PostService } from './services/post.service'
 
 @NgModule({ //contentiore di componenti e servizi
   declarations: [  //componenti che questo modulo fornisce
@@ -23,7 +26,9 @@ import { RegistrationComponent } from './components/registration/registration.co
     LoginComponent,
     DashboardComponent,
     TruncatePipe,
-    RegistrationComponent
+    RegistrationComponent,
+    PostComponent,
+    PostListComponent
   ],
 
   imports: [   //moduli dai quali dipende
@@ -35,7 +40,7 @@ import { RegistrationComponent } from './components/registration/registration.co
     routes
 
   ],
-  providers: [UserService, AuthGuard, AlreadyAuthGuard], //Cosa fornisce solo Service
+  providers: [UserService, AuthGuard, AlreadyAuthGuard, PostService], //Cosa fornisce solo Service
   bootstrap: [AppComponent]  //componente che fa partire il modulo (punti di accesso)
 })
 export class AppModule { }
