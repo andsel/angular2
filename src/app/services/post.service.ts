@@ -23,15 +23,20 @@ export class PostService {
     data: Array<any> = FAKE_DATA;
 
     getAll() {
-        return this.data;
+        //return this.data;
+        return new Promise((resolve, reject) => {
+            resolve(this.data);
+        });
     }
 
     getById(id: number) {
-        for (let index in this.data) {
-            let post = this.data[index];
-            if (post.id === id) {
-                return post;
+        return new Promise((resolve, reject) => {
+            for (let index in this.data) {
+                let post = this.data[index];
+                if (post.id === id) {
+                    resolve(post);
+                }
             }
-        }
+        });
     }
 }

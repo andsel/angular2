@@ -17,13 +17,13 @@ export class PostComponent implements OnInit, OnDestroy {
         private postService: PostService) {}
 
     ngOnInit() {
-        this.sub = this.route.params.subscribe(params => {
-            this.postId = parseInt(params['id']);
-            this.post = this.postService.getById(this.postId);
+        this.postId = parseInt(this.route.snapshot.params.id);
+        this.postService.getById(this.postId).then(post => {
+            this.post = post;
+            console.log(post);
         });
      }
 
     ngOnDestroy() {
-        this.sub.unsubscribe();
     }
 }

@@ -11,6 +11,8 @@ export class PostListComponent implements OnInit {
     constructor (private postService: PostService) {}
 
     ngOnInit() {
-        this.data = this.postService.getAll();
+        this.postService.getAll().then((data: Array<any>) => {
+            this.data = data;
+        }).catch(err => console.error("errore della madonna", err));
     }
 }

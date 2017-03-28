@@ -13,6 +13,13 @@
       </ul>
 
       <ul class="right" [hidden]="!isLoggedIn">
+        <!--li [ngClass]="{'active': rla.isActive}">
+          <a routerLinkActive #rla="routerLinkActive" routerLink="/dashboard">Dashboard </a>
+        </li-->
+
+        <li routerLinkActive="active">
+          <a routerLink="/dashboard">Dashboard </a>
+        </li>
         <li>
           <a materialize="dropdown" 
           data-beloworigin="true" data-activates="user-dropdown" class="dropdow-button">
