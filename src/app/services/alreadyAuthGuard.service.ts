@@ -11,7 +11,7 @@ export class AlreadyAuthGuard implements CanActivate {
         private router: Router
     ) { }
 
-    canActivate(): boolean {
+    canActivate(): boolean {    
         console.log("canActivate...");
         if (this.userService.isLoggedIn()) {
             this.router.navigate(["/dashboard"]);
