@@ -1,14 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface RegistrationForm {
-  name: string;
-  lastname: string;
-  email: string;
-  phone: string;
-  password: string;
-  repeatPassword: string;
-  privacyTerms: boolean;
-}
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -16,20 +7,24 @@ interface RegistrationForm {
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+  registrationForm: FormGroup;
 
-  form : RegistrationForm = {
-    name: '',
-    lastname: '',
-    email: '',
-    phone: '',
-    password: '',
-    repeatPassword: '',
-    privacyTerms: false,
+  ngOnInit(): void {
+    this.registrationForm = new FormGroup({
+      name: new FormControl("", Validators.required),
+      lastname: new FormControl("", Validators.minLength(5)),
+      phone: new FormControl("", Validators.maxLength(10)),
+      email: new FormControl("", Validators.email),
+      password: new FormControl(""),
+      repeatedPassword: new FormControl(""),
+      privacyTerms: new FormControl(true, Validators.requiredTrue),
+    });
   }
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() { 
   }
 
+  onSubmit($event) {
+    console.log(this.registrationForm.value);
+  }
 }

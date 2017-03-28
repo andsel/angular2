@@ -4,7 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UserService } from './services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterializeModule } from 'angular2-materialize';
 import {routes} from "./app.routing"
@@ -29,6 +29,7 @@ import { RegistrationComponent } from './components/registration/registration.co
   imports: [   //moduli dai quali dipende
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     MaterializeModule,
     routes
