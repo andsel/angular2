@@ -5,12 +5,14 @@ import { RouterModule, Routes } from "@angular/router"
 import { LoginComponent } from "./components/login/login.component"
 import { HomePageComponent } from "./components/homepage/homepage.component"
 import { PageNotFoundComponent } from "./components/pagenotfound/pagenotfound.component"
+import { RegistrationComponent } from "./components/registration/registration.component"
 
 
 const appRoutes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomePageComponent },
     { path: 'login', component: LoginComponent, canActivate: [AlreadyAuthGuard] },
+    { path: 'register', component: RegistrationComponent, canActivate: [AlreadyAuthGuard] },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: '**', component: PageNotFoundComponent }
 

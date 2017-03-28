@@ -14,6 +14,7 @@ import { HomePageComponent } from './components/homepage/homepage.component'
 import { PageNotFoundComponent } from './components/pagenotfound/pagenotfound.component'
 import { LoginComponent } from './components/login/login.component'
 import { TruncatePipe } from './pipes/truncate.pipe'
+import { RegistrationComponent } from './components/registration/registration.component'
 
 @NgModule({ //contentiore di componenti e servizi
   declarations: [  //componenti che questo modulo fornisce
@@ -22,7 +23,8 @@ import { TruncatePipe } from './pipes/truncate.pipe'
     PageNotFoundComponent,
     LoginComponent,
     DashboardComponent,
-    TruncatePipe
+    TruncatePipe,
+    RegistrationComponent
   ],
   imports: [   //moduli dai quali dipende
     BrowserModule,
