@@ -1,3 +1,4 @@
+import { TruncatePipe } from './pipes/truncate.pipe';
 import { AlreadyAuthGuard } from './services/alreadyAuthGuard.service';
 import { AuthGuard } from './services/authguard.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -12,10 +13,15 @@ import {routes} from "./app.routing"
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/homepage/homepage.component'
 import { PageNotFoundComponent } from './components/pagenotfound/pagenotfound.component'
+<<<<<<< HEAD
 import { LoginComponent } from './components/login/login.component'
 import { TruncatePipe } from './pipes/truncate.pipe'
 import { RegistrationComponent } from './components/registration/registration.component'
 
+=======
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component'
+>>>>>>> upstream/master
 @NgModule({ //contentiore di componenti e servizi
   declarations: [  //componenti che questo modulo fornisce
     AppComponent,
@@ -25,7 +31,11 @@ import { RegistrationComponent } from './components/registration/registration.co
     DashboardComponent,
     TruncatePipe,
     RegistrationComponent
+<<<<<<< HEAD
   ],
+=======
+      ],
+>>>>>>> upstream/master
   imports: [   //moduli dai quali dipende
     BrowserModule,
     FormsModule,

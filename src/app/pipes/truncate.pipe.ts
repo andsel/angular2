@@ -1,16 +1,13 @@
-import {PipeTransform, Pipe} from "@angular/core";
-
+import { Pipe, PipeTransform } from "@angular/core"
 @Pipe({
-    name: 'truncate'
+    name: "truncate"
 })
 export class TruncatePipe implements PipeTransform {
-
-    transform(value: string, maxChars: number = 20, endChars: string = "...") : string {
+    transform(value: string, maxChars: number = 20, endChars): string {
         let result = value;
         if (value && value.length > maxChars) {
-            result = value.substr(0, maxChars) + endChars;
-        }
-        return result;
-    }
 
+            return value.substring(0, maxChars) + endChars;
+        }
+    }
 }
