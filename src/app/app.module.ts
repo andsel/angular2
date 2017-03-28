@@ -13,14 +13,17 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/homepage/homepage.component'
 import { PageNotFoundComponent } from './components/pagenotfound/pagenotfound.component'
 import { LoginComponent } from './components/login/login.component'
+import { TruncatePipe } from './pipes/truncate.pipe'
+
 @NgModule({ //contentiore di componenti e servizi
   declarations: [  //componenti che questo modulo fornisce
     AppComponent,
     HomePageComponent,
     PageNotFoundComponent,
     LoginComponent,
-    DashboardComponent
-      ],
+    DashboardComponent,
+    TruncatePipe
+  ],
   imports: [   //moduli dai quali dipende
     BrowserModule,
     FormsModule,
